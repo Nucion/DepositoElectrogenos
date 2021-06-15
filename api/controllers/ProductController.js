@@ -20,13 +20,13 @@ module.exports = {
       ArrivalDate:arrivaldate,
     }).fetch();
 
-    res.send(JSON.stringify(product));
+    res.view('pages/homepage');
 
 
   },
   listProduct: async function(req, res){
     const allProducts = await Product.find();
-    res.view('pages/homepage',{allProducts});
+    res.view('pages/Tables',{allProducts});
   },
   newProductView: async function(req,res){
     res.view('pages/Import');
