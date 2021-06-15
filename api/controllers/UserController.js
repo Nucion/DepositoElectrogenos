@@ -14,11 +14,10 @@ module.exports = {
     });
     if(user && await sails.argon2.verify(user.password, contrasena)){
       req.session.user=user;
-      res.redirect('/');
     }else{
       req.session.user=null;
-      res.redirect('/');
     }
+    res.redirect('/');
 
   },
   logout: async function(req, res){

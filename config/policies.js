@@ -16,6 +16,10 @@ module.exports.policies = {
   * (`true` allows public access)                                            *
   *                                                                          *
   ***************************************************************************/
+  ProductController:{
+    newProduct:'isLoggedIn',
+    newProductView:'isLoggedIn'
+  },
 
   // '*': true,
 

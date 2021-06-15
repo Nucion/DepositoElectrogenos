@@ -14,7 +14,7 @@
 <body>
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
+  <li><a href="/Import">one</a></li>
   <li><a href="#!">two</a></li>
   <li class="divider"></li>
   <li><a href="#!">three</a></li>
@@ -26,7 +26,7 @@
     <ul class="right hide-on-med-and-down">
       <li><% if (req.session.user){ %><%= req.session.user.Name%>
         <% }%></li>
-      <li><a href="sass.html">Sass</a></li>
+      <li><% if (req.session.user){ %><a href="/Import">➕</a><% }%></li>
       <li><% if (req.session.user){ %><a href="/logout">Log out</a><% }else{%>
           <a href="/login">Log in</a>
         <% }%></li>

@@ -47,5 +47,12 @@ module.exports.bootstrap = async function() {
       TelNumber: '351324868',
       Address: 'Cordoba' },
   ]);
+  await Category.createEach([
+    { name:'Motor'},
+    { name:'PanelSolar'},
+    { name:'Generador'},
+
+
+  ]);
 
 };
