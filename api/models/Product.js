@@ -9,10 +9,10 @@ module.exports = {
 
   attributes: {
     Name:'string',
-    Code:'number',
     Weight:'number',
-    Brand:'string',
-    ArrivalDate:'string',
+    Volume:'number',
+    Supplier:'string',
+    Category:'string'
 
   },
 
