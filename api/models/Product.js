@@ -13,9 +13,6 @@ module.exports = {
     Weight:'number',
     Brand:'string',
     ArrivalDate:'string',
-    Type:{
-      model:'Category'
-    }
 
   },
 
