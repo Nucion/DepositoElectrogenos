@@ -18,10 +18,10 @@ module.exports.bootstrap = async function() {
   // ```
   // // Set up fake development data (or if we already have some, avast)
   if (await User.count() > 0) {
-    console.log("Base no vacia")
+    console.log('Base no vacia');
     return;
   }
-  console.log("Base vacia");
+  console.log('Base vacia');
   await User.createEach([
     { email: 'ry@example.com',
       Name: 'Ryan Dahl',
