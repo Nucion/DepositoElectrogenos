@@ -7,12 +7,14 @@
 
 module.exports = {
 
-  'attributes': {
-    Name: 'string',
-    Code: 'number',
-    Weight: 'number',
-    Brand: 'string',
-    ArrivalDate: 'string',
+
+  attributes: {
+    Name:'string',
+    Weight:'number',
+    Volume:'number',
+    Supplier:'string',
+    Category:'string'
+
 
   },
 

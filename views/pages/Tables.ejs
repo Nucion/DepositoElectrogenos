@@ -1,10 +1,60 @@
-<d1 class="content">
-    <% for(let i of allProducts){%>
-        <div>
-            <%= i.Name %>
+
+
+<div class="container">
+        <h6>
+        <div class="row">
+                <div class="col">
+                        Nombre
+                </div>
+                <div class="col">
+                        Categoria
+                </div>
+                <div class="col">
+                        Volumen
+                </div>
+                <div class="col">
+                        Peso
+                </div>
+                <div class="col">
+                        Proveedor
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
         </div>
-    <%} %>
-
-</d1>
-
-
+        </h6>
+        <% for(let i of allProducts){%>
+        <div class="row">
+                <div class="col">
+                        <%= i.Name %>
+                </div>
+                <div class="col">
+                        <%= i.Category %>
+                </div>
+                <div class="col">
+                        <%= i.Volume %>
+                </div>
+                <div class="col">
+                        <%= i.Weight %>
+                </div>
+                <div class="col">
+                        <%= i.Supplier %>
+                </div>
+                <div class="col">
+                        Cantidad
+                </div>
+                <div class="col">
+                        Comprar
+                </div>
+                <div class="col">
+                        Vender
+                </div>
+        </div>
+                <%} %>
+</div>
