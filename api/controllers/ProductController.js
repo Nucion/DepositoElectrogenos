@@ -12,24 +12,41 @@ module.exports = {
     const weight =req.param('weight');
     const category =req.param('category');
     const supplier =req.param('supplier');
-    const product =await Product.create({
+    if( await Product.findOne({
       Name:name,
       Volume:volume,
       Weight:weight,
       Category:category,
       Supplier:supplier,
-    }).fetch();
+    })){
+      const error = true;
+      res.view('pages/Import',{error});
+    }
+    else{
 
-    res.view('pages/homepage');
+      const product =await Product.create({
+        Name:name,
+        Volume:volume,
+        Weight:weight,
+        Category:category,
+        Supplier:supplier,
+      }).fetch();
+    }
+
+
+    const allProducts = await Product.find();
+    res.view('pages/Tables',{allProducts});
 
 
   },
   listProduct: async function(req, res){
     const allProducts = await Product.find();
+
     res.view('pages/Tables',{allProducts});
   },
   newProductView: async function(req,res){
-    res.view('pages/Import');
+    const error =false;
+    res.view('pages/Import',{error});
   }
 
 };
