@@ -1,5 +1,5 @@
 /**
- * Product.js
+ * Purchase.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -7,21 +7,18 @@
 
 module.exports = {
 
-
   attributes: {
-    Name:'string',
-    Weight:'number',
-    Volume:'number',
-    Supplier:'string',
-    Category:'string'
-
+    Amount:'number',
+    Discount:'number',
+    Final_Price:'number',
 
   },
-
-  units: {
-    collection: 'Purchase',
-    via:'product'
+  product: {
+    model:'Product'
+  },
+  sale:{
+    model:'Sale',
+    unique: true
   }
-
 };
 
