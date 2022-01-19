@@ -25,6 +25,7 @@ module.exports.routes = {
   '/logout': 'UserController.logout',
   'GET /Import': 'ProductController.newProductView',
   'POST /Import': 'ProductController.newProduct',
+  '/Historial': 'UserController.historial'
 
 
   /***************************************************************************
