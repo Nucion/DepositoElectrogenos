@@ -20,6 +20,9 @@ module.exports.policies = {
     newProduct:'isLoggedIn',
     newProductView:'isLoggedIn'
   },
+  UserController:{
+    historial:'isLoggedIn'
+  }
 
   // '*': true,
 
