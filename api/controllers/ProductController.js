@@ -35,19 +35,23 @@ module.exports = {
 
 
     const allProducts = await Product.find();
-    res.view('pages/Tables',{allProducts});
+    const stock = await Purchase.find({
+      isSold:false
+    });
+    res.view('pages/Tables',{allProducts,stock});
 
 
   },
   listProduct: async function(req, res){
     const allProducts = await Product.find();
-
-    res.view('pages/Tables',{allProducts});
+    const stock = await Purchase.find({
+      isSold:false
+    });
+    res.view('pages/Tables',{allProducts,stock});
   },
   newProductView: async function(req,res){
     const error =false;
     res.view('pages/Import',{error});
-  }
-
+  },
 };
 

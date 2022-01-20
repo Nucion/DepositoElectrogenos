@@ -16,7 +16,8 @@ module.exports = {
        amount: amount,
        discount: discount,
        finalPrize:finalPrize,
-       product:productId
+       product:productId,
+       isSold:false
      }).fetch();
      res.redirect('/');
    },
