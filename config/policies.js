@@ -20,10 +20,15 @@ module.exports.policies = {
     newProduct:'isLoggedIn',
     newProductView:'isLoggedIn'
   },
+
   PurchaseController: {
     redirect: 'isLoggedIn',
     newPurchase: 'isLoggedIn'
+  },
+  UserController:{
+    historial:'isLoggedIn'
   }
+
   // '*': true,
 
 };

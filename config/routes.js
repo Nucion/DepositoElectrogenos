@@ -29,6 +29,7 @@ module.exports.routes = {
   'POST /Buy/:productId':'PurchaseController.newPurchase',
   'GET /Sell/:productId':'SaleController.redirect',
   'POST /Sell/:productId/:purchaseId':'SaleController.newSale',
+  '/Historial': 'UserController.historial'
 
 
   /***************************************************************************

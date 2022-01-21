@@ -1,0 +1,18 @@
+<form action="/historial" method="post">
+    <div class="container">
+        <% for(let i of allTransactions2){ %>
+        <div class="row">
+            <div class="col">
+                 <%=i.id%>
+            </div>
+            <div class="col">
+                <%=i.Name%>
+            </div>
+            <div class="col">
+                <% var newDate = new Date(i.createdAt*1000).toDateString()%>
+                <%=newDate%>
+            </div>
+        </div>
+       <% }%>
+    </div>
+</form>
