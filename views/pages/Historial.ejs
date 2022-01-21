@@ -1,18 +1,83 @@
-<form action="/historial" method="post">
     <div class="container">
+        <h6>
+            <div class="row">
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    Nombre
+                </div>
+                <div class="col">
+                    Proveedor/Comprador
+                </div>
+                <div class="col">
+                    Costo/Ganancia
+                </div>
+                <div class="col">
+                    Fecha
+                </div>
+                <div class="col">
+
+                </div>
+
+            </div>
+        </h6>
         <% for(let i of allTransactions2){ %>
         <div class="row">
+
             <div class="col">
-                 <%=i.id%>
+                <%if(i.type=="purchase"){%>
+                    <p class=" bg-success text-white">
+                        Compra
+                    </p>                <%}
+                else if (i.type=="sale"){%>
+                        <p class="bg-danger text-white">
+                            Venta
+                        </p>
+                    <%}%>
+
+            </div>
+
+            <div class="col">
+                <%if(i.type=="purchase"){%>
+                <%=i.product.Name%>
+                <%}
+                else if (i.type=="sale"){%>
+                <%=i.purchase.product.Name%>
+                <%}%>
+
             </div>
             <div class="col">
-                <%=i.Name%>
+                <%if(i.type=="purchase"){%>
+                <%=i.product.Supplier%>
+                <%}
+                else if (i.type=="sale"){%>
+                    <%= i.Client%>
+                <%}%>
+
             </div>
             <div class="col">
-                <% var newDate = new Date(i.createdAt*1000).toDateString()%>
+                <%if(i.type=="purchase"){%>
+                <%=i.Final_Price%>
+                <%}
+                else if (i.type=="sale"){%>
+                    <%= i.Profit%>
+                <%}%>
+
+            </div>
+            <div class="col">
+                <% var newDate = new Date(i.createdAt).toDateString()%>
                 <%=newDate%>
             </div>
+            <div class="col">
+                <%if(i.type=="purchase"){%>
+                    <a href="/PurchaseDetails/<%= i.id%>">Detalles</a>
+                <%}
+                else if (i.type=="sale"){%>
+                    <a href="/SaleDetails/<%= i.id%>">Detalles</a>
+                <%}%>
+            </div>
         </div>
+
        <% }%>
     </div>
-</form>

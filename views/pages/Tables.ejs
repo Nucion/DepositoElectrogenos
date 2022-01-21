@@ -27,6 +27,7 @@
                 <div class="col">
 
                 </div>
+
         </div>
         </h6>
         <% for(let i of allProducts){%>
@@ -49,7 +50,7 @@
                 <div class="col">
                         <%let thisStock = []
                                 for(let j of stock) {
-                                        if (j.product == i.id) {
+                                        if (j.product.id == i.id) {
                                                 thisStock.push(j);
                                         }
                                 }

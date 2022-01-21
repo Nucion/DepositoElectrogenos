@@ -36,7 +36,7 @@ module.exports = {
 
     const allProducts = await Product.find();
     const stock = await Purchase.find({
-      isSold:false
+      IsSold:false
     });
     res.view('pages/Tables',{allProducts,stock});
 
@@ -45,7 +45,7 @@ module.exports = {
   listProduct: async function(req, res){
     const allProducts = await Product.find();
     const stock = await Purchase.find({
-      isSold:false
+      IsSold:false
     });
     res.view('pages/Tables',{allProducts,stock});
   },
@@ -53,5 +53,6 @@ module.exports = {
     const error =false;
     res.view('pages/Import',{error});
   },
+
 };
 

@@ -25,9 +25,9 @@ module.exports = {
     res.redirect('/');
   },
   historial: async function(req, res){
-  req.session.user=null;
-  const allSales = await User.find();
-  const allPurchases = await Product.find();
+
+  const allSales = await Sale.find();
+  const allPurchases = await Purchase.find();
   const allTransactions = allSales.concat(allPurchases);
   const allTransactions2 = allTransactions.sort(function(a,b){
       return b.createdAt - a.createdAt;

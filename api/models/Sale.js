@@ -12,6 +12,7 @@ module.exports = {
     Profit: 'number',
     Client: 'string',
     DepositedTime:'number',
+    type: 'string',
   },
   purchase:{
     collection:'purchase',
