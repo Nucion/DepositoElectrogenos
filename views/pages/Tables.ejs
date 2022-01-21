@@ -19,7 +19,7 @@
                         Proveedor
                 </div>
                 <div class="col">
-
+                        Cantidad
                 </div>
                 <div class="col">
 
@@ -47,7 +47,14 @@
                         <%= i.Supplier %>
                 </div>
                 <div class="col">
-                        Cantidad
+                        <%let thisStock = []
+                                for(let j of stock) {
+                                        if (j.product == i.id) {
+                                                thisStock.push(j);
+                                        }
+                                }
+                        %>
+                        <%= thisStock.length;%>
                 </div>
                 <div class="col">
                         <a href="/Buy/<%= i.id%>">Comprar</a>

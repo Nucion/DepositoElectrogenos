@@ -11,6 +11,7 @@ module.exports = {
     Amount:'number',
     Discount:'number',
     Final_Price:'number',
+    IsSold:'boolean'
 
   },
   product: {
