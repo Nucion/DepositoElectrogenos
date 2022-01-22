@@ -11,7 +11,7 @@ module.exports = {
     const amount = req.param('monto');
     const client = req.param('cliente');
     const purchase = await Purchase.findOne({id: req.param('purchaseId')});
-    const time =  Math.round((new Date()).getTime() / 1000)- purchase.createdAt;
+    const time =  Math.round((new Date()).getTime())- purchase.createdAt;
     const gain = amount - purchase.Amount;
     const sale = await  Sale.create({
       Amount: amount,

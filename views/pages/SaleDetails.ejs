@@ -1,0 +1,120 @@
+<div class="mt-3">
+    <div class="container">
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>ID:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> <%=sale.id%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Precio:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> $<%=sale.Amount%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Ganancia:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> $<%=sale.Profit%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Cliente:</h6>
+            </div>
+            <div class="col">
+                <h7> <%=sale.Client%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Tiempo en deposito:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7>
+                    <%var date1 = new Date(null);
+                    date1.setSeconds(sale.DepositedTime/1000);
+                    var result = date1.toISOString().substr(11, 8);
+                    %>
+                    <%=result%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Compra asociada:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7><a class="btn btn-light btn-sm" href="/PurchaseDetails/<%= sale.purchase.id%>">Detalles</a></h7>
+            </div>
+        </div>
+
+
+        <div class="row ">
+            <hr class="divider">
+        </div>
+
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Producto:</h6>
+            </div>
+            <div class="col">
+                <h7> <%=sale.purchase.product.Name%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Peso:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> <%=sale.purchase.product.Weight%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Volumen:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> <%=sale.purchase.product.Volume%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Proveedor:</h6>
+            </div>
+            <div class="col">
+                <h7> <%=sale.purchase.product.Supplier%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Categoria:</h6>
+            </div>
+            <div class="col">
+                <h7> <%=sale.purchase.product.Category%></h7>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
