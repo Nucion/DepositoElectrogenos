@@ -12,7 +12,6 @@ module.exports = {
     Discount:'number',
     Final_Price:'number',
     IsSold:'boolean',
-    productName:'string',
     type: 'string'
 
   },

@@ -1,0 +1,112 @@
+<div class="mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>ID:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> <%=purchase.id%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Precio:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> $<%=purchase.Amount%> </h7>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col col-lg-2">
+                    <h6>Descuento:</h6>
+                </div>
+                <div class="col col-lg-1">
+                    <h7> <%=purchase.Discount%>%</h7>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Monto final:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> $<%=purchase.Final_Price%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Vendido:</h6>
+            </div>
+
+                    <% if(purchase.IsSold){%>
+                        <div class="col col-lg-1">
+                    Si:
+                    </div>
+                        <div class="col ">
+                        <a class="btn btn-light btn-sm" href="/SaleDetails/<%= sale.id%>">Detalles</a>
+                        </div>
+                    <%}else{%>
+                        <div class="col col-lg-1">
+                    No
+                        </div>
+                    <%}%>
+
+
+        </div>
+
+        <div class="row ">
+            <hr class="divider">
+
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Producto:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> <%=purchase.product.Name%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Peso:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> <%=purchase.product.Weight%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Volumen:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> <%=purchase.product.Volume%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Proveedor:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> <%=purchase.product.Supplier%></h7>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-2">
+                <h6>Categoria:</h6>
+            </div>
+            <div class="col col-lg-1">
+                <h7> <%=purchase.product.Category%></h7>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

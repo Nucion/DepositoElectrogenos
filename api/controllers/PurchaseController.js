@@ -32,7 +32,22 @@ module.exports = {
   details: async function(req,res){
     const purchaseId =req.param('purchaseId');
     const purchase = await Purchase.findOne({id:purchaseId})
-    res.view('pages/SaleDetails',{purchase});
+    if(purchase.IsSold){
+      const sales = await Sale.find();
+      for(let i of sales){
+        // eslint-disable-next-line eqeqeq
+        if(i.purchase.id==purchaseId){
+          const sale = i;
+          res.view('pages/PurchaseDetails',{purchase, sale});
+
+        }
+      }
+
+    }else{
+      res.view('pages/PurchaseDetails',{purchase});
+
+    }
+
 
   },
 };

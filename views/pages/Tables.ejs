@@ -21,7 +21,7 @@
                 <div class="col">
                         Cantidad
                 </div>
-                <div class="col">
+                <div class="col col-lg-1">
 
                 </div>
                 <div class="col">
@@ -57,11 +57,13 @@
                         %>
                         <%= thisStock.length;%>
                 </div>
-                <div class="col">
-                        <a href="/Buy/<%= i.id%>">Comprar</a>
+                <div class="col col-lg-1">
+                        <a class="btn btn-outline-success btn-sm" href="/Buy/<%= i.id%>">Comprar</a>
+
                 </div>
                 <div class="col">
-                        <a href="/Sell/<%= i.id%>">Vender</a>
+                        <a class="btn btn-outline-danger btn-sm" href="/Sell/<%= i.id%>">Vender</a>
+
                 </div>
         </div>
                 <%} %>
