@@ -1,9 +1,52 @@
 <form action="/Import" method="post">
-    Name:<input type="text" name="name"><br>
-    Code:<input type="number" name="code"><br>
-    Weight:<input type="number" name="weight"><br>
-    Brand:<input type="text" name="brand"><br>
-    ArrivalDate:<input type="text" name="date">
+    <div class="mt-3">
+    <% if(error){%>
+        El  producto que esta intentando ingresar ya existe en la base de datos
+    <%}%>
+    <div class="container">
+        <div class="row">
+        <div class="col col-lg-1">
+            Name:
+        </div>
+        <div class="col">
+            <input type="text" name="name"><br>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-1">
+                Volume:
+            </div>
+        <div class="col">
+            <input type="number" name="volume"><br>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-1">
+                Weight:
+            </div>
+        <div class="col">
+            <input type="number" name="weight"><br>
+        </div>
+        </div>
+            <div class="row">
+        <div class="col col-lg-1">
+            Category:
+        </div>
+        <div class="col">
+            <input type="text" name="category"><br>
+        </div>
+            </div>
+        <div class="row">
+            <div class="col col-lg-1">
+                Supplier:
+            </div>
+            <div class="col">
+                <input type="text" name="supplier">
+                <input type="submit">
+            </div>
+        </div>
+        </div>
+    </div>
 
-    <input type="submit">
+    </div>
 </form>

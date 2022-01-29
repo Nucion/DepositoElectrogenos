@@ -12,23 +12,22 @@
 
 
 <ul class="nav nav-tabs">
-    <a href="/">🏠</a>
+    <h5><a class="nav-link active" href="/">⚡</a></h5>
     <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="/Tables">Table</a>
-    </li>
     <li class="nav-item">
 
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link active" href="/Historial" tabindex="-1" aria-disabled="true">Historial</a>
     </li>
-    <li><% if (req.session.user){ %><a class="nav-link" href="/Import">➕</a><% }%></li>
+    </li><% if (req.session.user){ %>
+
+    <li><a class="nav-link active" href="/Import" tabindex="-1" aria-disabled="true">Nuevo producto</a></li><% }%>
     </li>
     <li class="nav-item dropdown">
         <% if (req.session.user){ %>
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><%= req.session.user.Name%></a>
+        <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><%= req.session.user.Name%></a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="/Tables">Comprar/Vender</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/logout">Log out</a></li>
         </ul><% }else {%>
@@ -36,7 +35,6 @@
         <a class="nav-link active" href="/login">Log in</a>
             </li><% }%>
     </li>
-    <li class="nav-item">
 
 
 

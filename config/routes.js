@@ -25,6 +25,15 @@ module.exports.routes = {
   '/logout': 'UserController.logout',
   'GET /Import': 'ProductController.newProductView',
   'POST /Import': 'ProductController.newProduct',
+  'GET /Buy/:productId':'PurchaseController.redirect',
+  'POST /Buy/:productId':'PurchaseController.newPurchase',
+  'GET /Sell/:productId':'SaleController.redirect',
+  'POST /Sell/:productId/:purchaseId':'SaleController.newSale',
+  '/Historial': 'UserController.historial',
+  '/PurchaseDetails/:purchaseId':'PurchaseController.details',
+  '/SaleDetails/:saleId':'SaleController.details',
+
+
 
 
   /***************************************************************************

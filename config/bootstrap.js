@@ -18,10 +18,10 @@ module.exports.bootstrap = async function() {
   // ```
   // // Set up fake development data (or if we already have some, avast)
   if (await User.count() > 0) {
-    console.log("Base no vacia")
+    console.log('Base no vacia');
     return;
   }
-  console.log("Base vacia");
+  console.log('Base vacia');
   await User.createEach([
     { email: 'ry@example.com',
       Name: 'Ryan Dahl',
@@ -47,12 +47,43 @@ module.exports.bootstrap = async function() {
       TelNumber: '351324868',
       Address: 'Cordoba' },
   ]);
-  await Category.createEach([
-    { name:'Motor'},
-    { name:'PanelSolar'},
-    { name:'Generador'},
+
+  await Product.createEach([
+    {
+      Name:'Motor XL54s',
+      Weight:'125',
+      Volume:'800',
+      Supplier:'Generco',
+      Category:'Motor'
 
 
+    }
   ]);
+  await Purchase.createEach([
+    {
+        Amount: '8900',
+        Discount: '5',
+        Final_Price:'8455',
+        product:await Product.findOne({id: 1}),
+        IsSold:true,
+        type: "purchase",
+
+
+    }
+  ]);
+  await Sale.createEach([
+    {
+        mount: '10000',
+        Client:'Cliente',
+        Profit:'1545',
+        DepositedTime: 1,
+        purchase:await Purchase.findOne({id: 1}),
+        type:"sale"
+
+
+    }
+  ]);
+
+
 
 };
